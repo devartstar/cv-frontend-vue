@@ -748,14 +748,14 @@ function setupPanelListeners(panelSelector) {
     var minimizeSelector = `${panelSelector} .minimize`
     var maximizeSelector = `${panelSelector} .maximize`
     var bodySelector = `${panelSelector} > .panel-body`
-    // Drag Start
-    $(headerSelector).on('mousedown', () =>
-        $(panelSelector).draggable({ disabled: false, containment: 'window' })
-    )
-    // Drag End
-    $(headerSelector).on('mouseup', () =>
-        $(panelSelector).draggable({ disabled: true })
-    )
+    // // Drag Start
+    // $(headerSelector).on('mousedown', () =>
+    //     $(panelSelector).draggable({ disabled: false, containment: 'window' })
+    // )
+    // // Drag End
+    // $(headerSelector).on('mouseup', () =>
+    //     $(panelSelector).draggable({ disabled: true })
+    // )
     // Current Panel on Top
     $(panelSelector).on('mousedown', () => {
         $(`.draggable-panel:not(${panelSelector})`).css('z-index', '99')
