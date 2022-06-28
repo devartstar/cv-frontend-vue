@@ -104,6 +104,7 @@ import simulationArea from '#/simulator/src/simulationArea'
 import { uxvar } from '#/simulator/src/ux'
 import modules from '#/simulator/src/modules'
 import { onBeforeMount, onMounted, ref } from 'vue'
+import onDragging from '#/composables/panelDrag'
 var panelData = []
 window.elementHierarchy = metadata.elementHierarchy
 window.elementPanelList = []
@@ -181,24 +182,11 @@ function getTooltipText(elementName) {
 onMounted(() => {
     const panelEle = document.querySelector('.draggable-panel')
     const headerEle = panelEle.querySelector('.panel-header')
-    console.log(panelEle)
-    console.log(headerEle)
-
-    function onDrag({ movementX, movementY }) {
-        let getStyle = window.getComputedStyle(panelEle)
-        let leftVal = parseInt(getStyle.left)
-        let topVal = parseInt(getStyle.top)
-        panelEle.style.left = `${leftVal + movementX}px`
-        panelEle.style.top = `${topVal + movementY}px`
-    }
-
     headerEle.addEventListener('mousedown', () => {
-        headerEle.classList.add('active')
-        headerEle.addEventListener('mousemove', onDrag)
+        headerEle.addEventListener('mousemove', onDragging)
     })
     document.addEventListener('mouseup', () => {
-        headerEle.classList.remove('active')
-        headerEle.removeEventListener('mousemove', onDrag)
+        headerEle.removeEventListener('mousemove', onDragging)
     })
 })
 </script>
