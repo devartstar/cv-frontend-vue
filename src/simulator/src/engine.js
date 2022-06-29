@@ -486,6 +486,8 @@ export function update(scope = globalScope, updateEverything = false) {
     if (loading === true || layoutModeGet()) return
     var updated = false
     simulationArea.hover = undefined
+    // console.log(simulationArea.lastSelected)
+    // update what is last selected
     // Update wires
     if (wireToBeChecked || updateEverything) {
         if (wireToBeChecked === 2)
@@ -537,18 +539,20 @@ export function update(scope = globalScope, updateEverything = false) {
     if (updateSimulation) {
         play()
     }
+
+    // Moved the logic to PropertiesPanel.vue
     // Show properties of selected element
-    if (!embed && prevPropertyObjGet() !== simulationArea.lastSelected) {
-        if (
-            simulationArea.lastSelected &&
-            simulationArea.lastSelected.objectType !== 'Wire'
-        ) {
-            // ideas: why show properties of project in Nodes but not wires?
-            showProperties(simulationArea.lastSelected)
-        } else {
-            // hideProperties();
-        }
-    }
+    // if (!embed && prevPropertyObjGet() !== simulationArea.lastSelected) {
+    //     if (
+    //         simulationArea.lastSelected &&
+    //         simulationArea.lastSelected.objectType !== 'Wire'
+    //     ) {
+    //         // ideas: why show properties of project in Nodes but not wires?
+    //         showProperties(simulationArea.lastSelected)
+    //     } else {
+    //         // hideProperties();
+    //     }
+    // }
     // Draw, render everything
     if (updateCanvas) {
         renderCanvas(scope)

@@ -241,6 +241,8 @@ export function showProperties(obj) {
     if (obj === prevPropertyObjGet()) return
     hideProperties()
     prevPropertyObjSet(obj)
+
+    /*
     if (layoutModeGet()) {
         // if an element is selected, show its properties instead of the layout dialog
         if (
@@ -345,15 +347,15 @@ export function showProperties(obj) {
             simulationArea.lastSelected.objectType
         ) !== -1
     ) {
-        $('#moduleProperty').show()
-        $('#moduleProperty-inner').append(
-            "<div id='moduleProperty-header'>" + 'Project Properties' + '</div>'
-        )
-        $('#moduleProperty-inner').append(
-            `<p><span>Project:</span> <input id='projname' class='objectPropertyAttribute' type='text' autocomplete='off' name='setProjectName'  value='${
-                getProjectName() || 'Untitled'
-            }'></p>`
-        )
+        //$('#moduleProperty').show()
+        //$('#moduleProperty-inner').append(
+        //    "<div id='moduleProperty-header'>" + 'Project Properties' + '</div>'
+        //)
+        // $('#moduleProperty-inner').append(
+        //     `<p><span>Project:</span> <input id='projname' class='objectPropertyAttribute' type='text' autocomplete='off' name='setProjectName'  value='${
+        //         getProjectName() || 'Untitled'
+        //     }'></p>`
+        // )
         $('#moduleProperty-inner').append(
             `<p><span>Circuit:</span> <input id='circname' class='objectPropertyAttribute' type='text' autocomplete='off' name='changeCircuitName'  value='${
                 globalScope.name || 'Untitled'
@@ -591,7 +593,7 @@ export function showProperties(obj) {
             circuitProperty[this.name](this.checked)
         }
     })
-
+    */
     // $(".moduleProperty input[type='number']").inputSpinner();
 }
 
@@ -600,8 +602,8 @@ export function showProperties(obj) {
  * @category ux
  */
 export function hideProperties() {
-    $('#moduleProperty-inner').empty()
-    $('#moduleProperty').hide()
+    // $('#moduleProperty-inner').empty()
+    // $('#moduleProperty').hide()
     prevPropertyObjSet(undefined)
     $('.objectPropertyAttribute').unbind('change keyup paste click')
 }
