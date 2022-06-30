@@ -1,7 +1,11 @@
 import { defineStore } from 'pinia'
-
+import simulationArea from '#/simulator/src/simulationArea'
 export interface State {
-    title: string
+    projectName: string
+    circuitName: string
+    clockTime: number
+    clockEnable: boolean
+    lightMode: boolean
 }
 
 export const useState = defineStore({
@@ -9,7 +13,11 @@ export const useState = defineStore({
 
     state: (): State => {
         return {
-            title: 'Welcome to CircuitVerse Simulator',
+            projectName: 'Untitled',
+            circuitName: globalScope.name,
+            clockTime: simulationArea.timePeriod,
+            clockEnable: true,
+            lightMode: false,
         }
     },
 })

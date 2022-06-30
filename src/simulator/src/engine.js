@@ -218,6 +218,7 @@ export function updateSubcircuitSet(param) {
  * @category engine
  */
 export function changeLightMode(val) {
+    console.log('lite mode chnaged')
     if (!val && lightMode) {
         lightMode = false
         DPR = window.devicePixelRatio || 1
