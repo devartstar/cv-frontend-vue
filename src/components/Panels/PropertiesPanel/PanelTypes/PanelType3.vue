@@ -1,6 +1,7 @@
 <template>
     <FormSpinButton
-        v-if="!data.fixedBitWidth"
+        v-if="!obj.fixedBitWidth"
+        :data="obj.bitWidth"
         input-type="text"
         min-val="1"
         max-val="32"
@@ -15,15 +16,16 @@
 import FormSpinButton from '../Shared/FormSpinButton.vue'
 
 const props = defineProps({
-    data: { type: Object, default: undefined },
+    obj: { type: Object, default: undefined },
 })
 
 function increaseBitWidth() {
-    if (props.data.bitWidth < 32) props.data.bitWidth++
+    if (props.obj.bitWidth < 32) props.obj.bitWidth++
 }
 function decreaseBitWidth() {
-    if (props.data.bitWidth > 1) props.data.bitWidth--
+    if (props.obj.bitWidth > 1) props.obj.bitWidth--
 }
+// above functions to be replaced by ux.js line:538
 </script>
 
 <style></style>

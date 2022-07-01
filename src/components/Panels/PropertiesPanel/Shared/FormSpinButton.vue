@@ -16,16 +16,6 @@
 
 <script lang="ts" setup>
 import { ref } from '@vue/reactivity'
-
-/*
-props to get :-
-	type
-	min & max
-	append-icon
-	prepend-icon
-	append-onclick-function
-	prepend-onclick-function
-*/
 const props = defineProps({
     data: { type: Number, default: 1 },
     inputType: { type: String, default: 'text' },
@@ -36,7 +26,6 @@ const props = defineProps({
     appendFunc: { type: Function, default: () => {} },
     prependFunc: { type: Function, default: () => {} },
 })
-console.log(props.data)
 const dataVal = ref(props.data)
 
 function appendFunction() {

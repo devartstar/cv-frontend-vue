@@ -12,7 +12,7 @@
                 <PanelType3
                     v-if="panelType == 3"
                     :key="toRaw(propertiesPanelObj)"
-                    :data="toRaw(propertiesPanelObj)"
+                    :obj="toRaw(propertiesPanelObj)"
                 />
             </div>
         </div>
