@@ -242,7 +242,6 @@ export function showProperties(obj) {
     hideProperties()
     prevPropertyObjSet(obj)
 
-    /*
     if (layoutModeGet()) {
         // if an element is selected, show its properties instead of the layout dialog
         if (
@@ -347,6 +346,7 @@ export function showProperties(obj) {
             simulationArea.lastSelected.objectType
         ) !== -1
     ) {
+        /*
         //$('#moduleProperty').show()
         //$('#moduleProperty-inner').append(
         //    "<div id='moduleProperty-header'>" + 'Project Properties' + '</div>'
@@ -378,6 +378,7 @@ export function showProperties(obj) {
             "<p><button type='button' class='objectPropertyAttributeChecked btn btn-xs custom-btn--primary' name='toggleLayoutMode' >Edit Layout</button><button type='button' class='objectPropertyAttributeChecked btn btn-xs custom-btn--tertiary' name='deleteCurrentCircuit' >Delete Circuit</button> </p>"
         )
         // $('#moduleProperty-inner').append("<p>  ");
+        */
     } else {
         $('#moduleProperty').show()
 
@@ -593,7 +594,6 @@ export function showProperties(obj) {
             circuitProperty[this.name](this.checked)
         }
     })
-    */
     // $(".moduleProperty input[type='number']").inputSpinner();
 }
 

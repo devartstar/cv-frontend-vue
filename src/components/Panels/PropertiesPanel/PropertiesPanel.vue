@@ -11,7 +11,7 @@
                 </div>
                 <PanelBody1 v-if="displayCase === 1" />
                 <PanelBody2 v-if="displayCase === 2" />
-                <PanelBody3 v-if="displayCase === 3" />
+                <PanelBody3 v-if="displayCase === 3" :data="propertiesToShow" />
             </div>
         </div>
     </div>
